@@ -30,10 +30,12 @@ const setMenu = o => { menu.classList.toggle('open', o); burger.setAttribute('ar
 burger.onclick = () => setMenu(!menu.classList.contains('open'));
 $$('a', menu).forEach(a => a.onclick = () => setMenu(false));
 addEventListener('scroll', () => {
-  nav.classList.toggle('s', scrollY > 30);
+  nav.classList.toggle('s', scrollY > 30); $('#mbar').classList.toggle('show', scrollY > 520);
   const h = document.documentElement; $('#progress').style.width = (scrollY / (h.scrollHeight - h.clientHeight) * 100) + '%';
 }, { passive: true });
 $('#yr').textContent = new Date().getFullYear();
+const spy = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) $$('a', menu).forEach(a => a.classList.toggle('act', a.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
+['services', 'process', 'blog', 'faq', 'contact'].forEach(id => spy.observe($('#' + id)));
 
 /* Animations d'apparition + compteurs */
 const io = new IntersectionObserver(es => es.forEach(e => {

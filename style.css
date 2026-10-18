@@ -197,3 +197,42 @@ h1 em{background:linear-gradient(90deg,var(--y),#fff8a0,var(--y));background-siz
 @media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.contact-grid{border-radius:26px}.c-info{padding:30px 20px;text-align:center;align-items:stretch}.c-line{justify-content:center;text-align:left}.c-line:hover{transform:none}.c-info .share{justify-content:center}.c-info::after{display:none}
  #contactForm.form{padding:28px 18px}.btns{grid-template-columns:1fr}.btns .btn{max-width:none}.upl{justify-content:center}.item{justify-content:center;text-align:center}.item .acts{justify-content:center;width:100%}}
+
+/* ===== v4 : finitions pro + responsive total ===== */
+::selection{background:var(--y);color:#0a2a15}
+html{scrollbar-color:var(--g) var(--bg)}
+body{padding-bottom:env(safe-area-inset-bottom)}
+img,svg,video{max-width:100%}h1,h2,h3,.c-line b,.item b{overflow-wrap:anywhere}
+.sec{padding:clamp(64px,9vw,110px) 0}
+h2{font-size:clamp(1.65rem,1.2rem + 2.2vw,2.7rem)}h1{font-size:clamp(2rem,1.2rem + 4.6vw,4.2rem)}
+.head h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;margin:16px auto 0;background:linear-gradient(90deg,var(--g),var(--y))}
+.hero{min-height:min(100svh,920px);display:flex;align-items:center}.hero-in{width:min(1160px,100% - 40px)}
+.links a:not(.btn).act{color:var(--y);background:rgba(255,255,255,.14)}
+.card,.post,.steps li,.badges li{box-shadow:0 1px 2px rgba(10,40,20,.05)}
+.steps li{transition:.35s}.steps li:hover{transform:translateY(-6px);box-shadow:var(--sh);border-color:var(--ac)}
+.btn,.fl input,.fl select{min-height:48px}.fl input,.fl select{padding-top:24px}
+.mbar{display:none}
+@media(min-width:1400px){.wrap,.hero-in{width:min(1280px,100% - 80px)}.nav{width:min(1280px,100% - 40px)}}
+@media(min-width:861px) and (max-width:1060px){.links a:not(.btn){padding:8px 9px;font-size:.88rem}.brand img{height:28px}.nav-cta{padding:10px 16px}}
+@media(hover:none){.card:hover,.post:hover,.steps li:hover,.c-line:hover,.badges li:hover,.btn-y:hover,.btn-o:hover{transform:none}}
+/* Tablettes et en dessous : héros centré */
+@media(max-width:980px){.hero{min-height:0}.hero-in{width:min(1160px,100% - 32px);text-align:center}.hero-txt{display:flex;flex-direction:column;align-items:center}.lead{margin-inline:auto}.cta{justify-content:center}.stats{justify-content:center}.head{margin-bottom:38px}
+ .split>div{text-align:center}.checks{width:fit-content;margin-inline:auto;text-align:left}.foot-top{text-align:left}}
+@media(max-width:860px){.dash{height:100dvh}.sheet{max-height:90dvh}}
+/* Mobile : barre d'actions fixe */
+@media(max-width:640px){
+ .wa-fab{display:none}
+ body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+ .mbar{display:grid;grid-template-columns:1.2fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);box-shadow:0 -10px 30px rgba(0,0,0,.12);transform:translateY(110%);transition:transform .4s}
+ .mbar.show{transform:none}.mbar .btn{min-height:46px;padding:10px;font-size:.95rem}
+ .toast{bottom:calc(92px + env(safe-area-inset-bottom))}
+ .foot{padding-bottom:10px}.head h2::after{margin-top:12px}.hero-vis{margin-bottom:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;max-width:380px}.stats b{font-size:1.7rem}
+}
+/* Très petits écrans (≤ 380px) */
+@media(max-width:380px){
+ .wrap{width:calc(100% - 24px)}.nav{width:calc(100% - 14px)}.nav .wrap{padding:0 6px 0 12px}.brand img{height:26px}.nav-act{gap:6px}.icon-btn{width:38px;height:38px}
+ h1{font-size:1.85rem}.lead{font-size:1rem}.chip{font-size:.72rem}.card,.steps li{padding:22px 16px}.form,#contactForm.form{padding:22px 14px!important}
+ .btn,.btn-lg{font-size:.95rem;padding-inline:14px}.stats span{font-size:.75rem}.mark-wrap{width:150px}.c-line{padding:12px;gap:10px}.ci{width:40px;height:40px}.x{width:34px;height:34px}.sheet.small{padding:30px 18px}
+}
+/* Paysage sur téléphone */
+@media(max-height:480px) and (orientation:landscape){.hero{padding:96px 0 40px}.hero-vis{display:none}.modal{align-items:start}.sheet{max-height:96dvh}.mbar{display:none}body{padding-bottom:0}}
